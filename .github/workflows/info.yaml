@@ -1,0 +1,8 @@
+name: info metadata
+on: workflow_dispatch
+jobs:
+  info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get metadata
+        run: echo " ${{ toJSON(github)}}"
