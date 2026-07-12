@@ -14,3 +14,18 @@ jobs:
         run: npm install
       - name: run Test
         run: npm test
+  second-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout the code
+        uses: actions/checkout@v7
+      - name: install nodejs
+        uses: actions/setup-node@v6
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: npm install
+      - name: build Project
+        run: npm run build
+      - name: deploy
+        run: echo " deployed " 
